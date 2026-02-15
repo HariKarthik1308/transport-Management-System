@@ -18,6 +18,10 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from routes.views import RouteViewSet, BookingViewSet, search_routes
+from django.http import HttpResponse
+
+def home(request):
+    return HttpResponse("Transport Management System Backend is Running 🚀")
 
 router = DefaultRouter()
 router.register(r'routes', RouteViewSet)
