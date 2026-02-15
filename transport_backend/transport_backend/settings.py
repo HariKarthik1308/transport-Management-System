@@ -25,7 +25,10 @@ SECRET_KEY = 'django-insecure-(y3m463+h50&ks^1iqmrm!hthv!sui=9styxmw9(m#2v*o^ol6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
+CSRF_TRUSTED_ORIGINS = [
+    "https://transport-management-system-1-3nz5.onrender.com"
+]
 
 
 # Application definition
