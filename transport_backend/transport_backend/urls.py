@@ -20,19 +20,22 @@ from rest_framework.routers import DefaultRouter
 from routes.views import RouteViewSet, BookingViewSet, search_routes
 from django.http import HttpResponse
 
+
 def home(request):
     return HttpResponse("Transport Management System Backend is Running 🚀")
+
 
 router = DefaultRouter()
 router.register(r'routes', RouteViewSet)
 router.register(r'bookings', BookingViewSet)
 
 urlpatterns = [
+    path('', home),  # ✅ THIS IS THE IMPORTANT LINE
+
     path('admin/', admin.site.urls),
 
-    # API router
     path('api/', include(router.urls)),
 
-    # Search
     path('api/search/', search_routes),
 ]
+
